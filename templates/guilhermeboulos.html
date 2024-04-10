@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Boulos</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color:#1e53a352; 
+            text-align: center; 
+        }
+        h1 {
+            font-size: 40px; 
+            color: hsl(29, 82%, 47%); 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        h2 {
+            font-size: 24px; 
+            color: #666; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte do subtítulo */
+        }
+        .resumo {
+            margin-top: 30px; 
+            text-align: center; 
+            width: 80%; 
+            margin-left: auto; 
+            margin-right: auto; 
+        }
+        .resumo p {
+            margin-bottom: 10px; 
+        }
+        .menu {
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Guilherme Boulos</h1>
+    <h2>Pré-candidato à prefeitura de São Paulo pelo PSOL</h2>
+    <br>
+    {% for resumo in resumos %}
+        <div class="resumo">
+            <p><strong>{{ resumo['titulo'] }}</strong></p>
+            <p>{{ resumo['resumo'] }}</p>
+        </div>
+    {% endfor %}
+    <br>
+    <p>Resumos de matérias extraídas do jornal Folha de SP</p>
+    <br>
+    <div class="menu">
+        <a href="/paginainicial">Voltar</a> 
+    </div>
+</body>
+</html>

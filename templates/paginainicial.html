@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url(../fotos/urna.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1e53a352; 
+        }
+        .container {
+            padding: 20px;
+            background-color: transparent; 
+            width: 50%; 
+            text-align: center; 
+        }
+        .container h1 {
+            font-size: 65px; 
+            color: hsl(29, 82%, 47%);
+        }
+
+        .container h2 {
+            font-size: 48px; 
+            color: hsl(29, 82%, 47%);
+        }
+    
+        .container p {
+            font-size: 20px; 
+            font-family: Arial, sans-serif; 
+            color: #383434; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ELEGE SÃO PAULO</h1>
+        <h2>TÁ NA MÍDIA</h2>
+        <br>
+        <form id="candidatoForm" method="get">
+            <label for="candidato">Candidato:</label>
+            <select name="candidato" id="candidato">
+                <option value="/guilhermeboulos">Guilherme Boulos</option>
+                <option value="/ricardonunes">Ricardo Nunes</option>
+                <option value="/tabataamaral">Tabata Amaral</option>
+            </select>
+            <button type="button" onclick="redirect()">Selecionar</button>
+        </form>
+        <br>
+        <br>
+        <p>Resumão de notícias sobre os candidatos à prefeitura de SP</p>
+        <br>
+        <p>Informe-se e faça uma escolha consciente</p>
+    </div>
+    <script>
+        function redirect() {
+            var select = document.getElementById("candidato");
+            var candidato = select.options[select.selectedIndex].value;
+            window.location.href = candidato;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,2 +1,7 @@
 Flask
 gunicorn
+requests
+bs4
+textwrap
+openai
+python-dotenv
