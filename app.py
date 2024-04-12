@@ -35,8 +35,8 @@ def raspador_noticias(palavras_chave):
 
 def texto_completo(link):
     resposta = requests.get(link)
-    if resposta.status_code == 200:
-        soup = BeautifulSoup(resposta.text, 'html.parser')
+    if resposta.status_code == 200: 
+        soup = BeautifulSoup(resposta.text, 'html.parser') 
         texto = soup.find('div', {"class": 'c-news__body'})
         if texto:
             texto_formatado = texto.text.strip().replace('\n', '\n\n')
@@ -45,7 +45,7 @@ def texto_completo(link):
             return texto_final
         
 def resumo_materia(texto_completo):
-    prompt = "Sou uma jornalista e estou fazendo uma newsletter com notícias sobre os candidatos para a prefeitura de São Paulo nas eleições de 2024. Faça um resumo de cada texto extraído com 300 caracteres. Os resumos precisam ter o nome do candidato sugerido na palavra-chave."
+    prompt = "Sou uma jornalista e estou fazendo uma newsletter com notícias sobre três candidatos para a prefeitura de São Paulo nas eleições de 2024. Estou te apresentando uma função que extrai notícias agrupadas por palavras-chave. Cada palavra-chave leva o nome de um candidato. Para cada candidato (palavra-chave) foram extraídas 5 notícias. Quero que você faça um resumo de no máximo 300 caracteres sobre cada notícia. Siga os seguintes passos: 1- Leia as notícias extraídas na função. 2 - Separe trechos importantes que podem ser essenciais para o eleitor se informar sobre o candidato. 3 - Faça um resumo de no máximo 300 caracteres sobre a notícia. 4 - É obrigatório que o resumo tenha o nome do candidato sugerido na palavra-chave. 5 - O resumo pode ter alguma aspa importante, mas não é obrigatório. 6 - Preciso que os resumos referentes a cada notícia estejam separados com espaçamento."
     openai_api_key = token_openai
     client = openai.Client(api_key = openai_api_key)
     response = client.chat.completions.create(
@@ -56,7 +56,7 @@ def resumo_materia(texto_completo):
                   ]
     )
     if response.choices:
-        resumo = response.choices[0].message.content
+        resumo = response.choices[0].message.content 
         largura_da_tela = 150
         resumo_formatado = textwrap.fill(resumo, width=largura_da_tela)
         return resumo_formatado 
@@ -111,5 +111,5 @@ def candidato3():
     return render_template("tabataamaral.html", resumos=resumos)
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True) 
+    app.run(port=5000, debug=True)
     

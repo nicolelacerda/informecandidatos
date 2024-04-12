@@ -37,9 +37,29 @@
         }
     
         .container p {
-            font-size: 20px; 
+            font-size: 15px; 
             font-family: Arial, sans-serif; 
             color: #383434; 
+        }
+        select {
+            width: 190px; 
+            padding: 08px;
+            font-size: 18px;
+        }
+        label {
+            display: inline-block;
+            width: 130px; /* Defina a largura desejada */
+            margin-bottom: 08px;
+            font-size: 22px; /* Aumenta o tamanho da fonte */
+            color: #464343; /* Altera a cor do texto */
+            margin-right: 01px;
+            font-family: 'Impact, Haettenschweiler, 'Arial Narrow Bold;
+        }
+        button {
+            display: inline-block;
+            width: 100px; /* Defina a largura desejada */
+            margin-bottom: 08px;
+            font-size: 16px; /* Diminui o tamanho da fonte */
         }
     </style>
 </head>
@@ -49,7 +69,7 @@
         <h2>TÁ NA MÍDIA</h2>
         <br>
         <form id="candidatoForm" method="get">
-            <label for="candidato">Candidato:</label>
+            <label for="candidato"><strong>Candidato:</strong></label>
             <select name="candidato" id="candidato">
                 <option value="/guilhermeboulos">Guilherme Boulos</option>
                 <option value="/ricardonunes">Ricardo Nunes</option>
