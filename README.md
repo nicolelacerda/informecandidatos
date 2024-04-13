@@ -40,5 +40,10 @@ Código de um site que extrai notícias sobre três candidatos à prefeitura de 
 
 ## Rotas páginas HTML
 
+> Função /paginainicial:
+É a página inicial do site, possui um formulário com os nomes dos candidatos. O usuário deve selecionar um dos candidatos e será redirecionado para a página com o resumo das notícias referente o candidato escolhido. 
+
+> Funções: candidato1 (/guilhermeboulos), candidato2 (/ricardonunes), candidato3 (/tabataamaral):
+Objetivo é renderizar as páginas de cada candidato. Extraem as notícias para o candidato usando a função raspador_noticias, resumem essas notícias chamando resumo_materia, e depois renderizam um modelo HTML para cada candidato,devolvendo os resumos das notícias.
 
 
